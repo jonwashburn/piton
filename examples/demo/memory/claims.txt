@@ -1,0 +1,12 @@
+# GENERATED FILE - do not edit. Regenerate: piton project <dir>
+
+# CLAIMS (tip per id; full history in ledger.jsonl, grep the id)
+C-baseline | live | MEASURED | Reference run reproduces published RMSE | gate=bench/run.sh on the frozen split | ev=1 | h=de8ecb25703c
+C-speedup | live | HYPOTHESIS | Vectorized kernel gives 4x end-to-end speedup | gate=bench/timing.sh, same machine, frozen workload | ev=0 | h=ba23422be5aa
+
+# OPEN DECISIONS
+D-dataset | open | Adopt the 2026 extended dataset as the default eval, or keep the frozen 2024 split for comparability?
+
+# LESSONS (do not relearn)
+L-1 | Never compare timings across machines; the 4x claim was nearly banked from a laptop-vs-server comparison.
+

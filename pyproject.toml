@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piton-memory"
+version = "0.1.0"
+description = "Durable, honest program memory for AI agent sessions: bounded orientation, append-only claims ledger, staleness as a build error."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Jonathan Washburn" }]
+keywords = ["ai-agents", "memory", "ledger", "research", "provenance", "epistemics"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Documentation",
+]
+
+[project.urls]
+Homepage = "https://github.com/jonwashburn/piton"
+Repository = "https://github.com/jonwashburn/piton"
+
+[project.scripts]
+piton = "piton:main"
+
+[tool.setuptools]
+py-modules = ["piton"]

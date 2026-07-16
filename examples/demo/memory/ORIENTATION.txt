@@ -1,0 +1,30 @@
+PROGRAM: Aurora (demo)
+LEDGER_HEAD: ba23422be5aa
+
+NORTH STAR
+  Fictional demo program: reproduce a published forecasting benchmark, then
+  make the reference implementation fast enough for nightly evaluation runs.
+  The honest bar: every performance claim is gated by a frozen benchmark
+  script on a fixed machine.
+
+CURRENT CHAPTER
+  The reference implementation matches the published RMSE on the frozen
+  split (C-baseline, MEASURED). A 4x speedup claim was banked and then
+  DOWNGRADED to HYPOTHESIS after an audit found it compared timings across
+  machines (see the C-speedup chain in the ledger; that is the point of the
+  demo). Next: rerun the timing gate on one machine, and settle the open
+  dataset decision.
+
+NEXT STEPS
+  1. Same-machine timing rerun for C-speedup (gate: bench/timing.sh).
+  2. Resolve D-dataset (2026 extended vs frozen 2024 split).
+
+POINTERS
+  claims.txt        current claims/decisions/lessons (GENERATED; grep this)
+  ledger.jsonl      full append-only record; grep an id for its history
+
+PROTOCOL (enforced by `piton validate`)
+  read: this file, then grep claims.txt; never trust prose over the ledger.
+  write: append records (`piton append`), refresh CURRENT CHAPTER, then run
+  `piton close`. Tiers obey external truth gates; the weakest link sets the
+  tier; never inflate.
