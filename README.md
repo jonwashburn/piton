@@ -10,6 +10,15 @@ project remembers itself between sessions.
 No server, no database, no embeddings. One stdlib-only Python file, plain text
 on disk, git as the only coordination.
 
+Piton also handles a whole portfolio of projects. Each project keeps its own
+small, focused memory, while a root registry maps how the projects relate.
+Projects can be nested to any depth, and the structure is a graph rather than
+a rigid folder tree: one project can belong under several parent programs at
+once. This lets an agent start from the full portfolio, follow the relevant
+branch into the right project, and load only the context needed for the task.
+`piton overview` then checks every registered project at once and shows which
+memories are current, stale, missing, active, dormant, closed, or absorbed.
+
 ## The problem
 
 Teams running many AI agent sessions against one long-lived project usually end
